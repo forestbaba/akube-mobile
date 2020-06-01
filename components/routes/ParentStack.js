@@ -10,6 +10,7 @@ import HomeStackApp from '../screens/home/HomeStack'
 import Search from '../screens/search/Search'
 import Profile from '../screens/profile/profile'
 import ProfileStack from '../screens/profile/ProfileStack'
+import CartStack from '../screens/cart/CartStack'
 
 function Notifications() {
     return (
@@ -55,11 +56,11 @@ export default function ParentStack() {
                 />
                 <Tab.Screen
                     name="Notifications"
-                    component={Notifications}
+                    component={CartStack}
                     options={{
-                        tabBarLabel: 'Saved',
+                        tabBarLabel: 'Cart',
                         tabBarIcon: ({ color, size }) => (
-                            <MaterialCommunityIcons name="heart" color={color} size={size} />
+                            <MaterialCommunityIcons name="cart" color={color} size={size} />
                         ),
                     }}
                 />
@@ -68,7 +69,7 @@ export default function ParentStack() {
                     component={ProfileStack}
                     options={{
                         tabBarLabel: 'Profile',
-                        header:null,
+                        header: null,
                         tabBarIcon: ({ color, size }) => (
                             <MaterialCommunityIcons name="account" color={color} size={size} />
                         ),

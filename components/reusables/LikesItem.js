@@ -1,23 +1,25 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { View, Text, Image, StyleSheet } from 'react-native'
-import { TouchableOpacity } from 'react-native-gesture-handler'
+import { TouchableOpacity, ScrollView } from 'react-native-gesture-handler'
 
 const LikesItem = ({ title }) => {
     return (
-        <View style={styles.container}>
-            <View style={styles.imageholder}>
-                <Image source={require('../../assets/13_300.png')}
-                    resizeMode="cover" style={styles.image} />
+           
+
+            <View style={styles.container}>
+                <View style={styles.imageholder}>
+                    <Image source={require('../../assets/13_300.png')}
+                        resizeMode="cover" style={styles.image} />
+                </View>
+                <View style={styles.details}>
+                    <Text style={styles.itemname}>Designer</Text>
+                    <Text>$200</Text>
+                    <Text style={styles.date}>12 Jan, 2020</Text>
+                    <TouchableOpacity>
+                        <Text style={styles.addtobag}>Move to bag</Text>
+                    </TouchableOpacity>
+                </View>
             </View>
-            <View style={styles.details}>
-                <Text  style={styles.itemname}>Designer</Text>
-                <Text>$200</Text>
-                <Text style={styles.date}>12 Jan, 2020</Text>
-                <TouchableOpacity>
-                    <Text style={styles.addtobag}>Move to bag</Text>
-                </TouchableOpacity>
-            </View>
-        </View>
     )
 }
 
@@ -28,8 +30,8 @@ const styles = StyleSheet.create({
         flexDirection: 'row',
         padding: 20,
         borderBottomWidth: 1,
-        borderColor:'#c7c6cb',
-        marginHorizontal:15
+        borderColor: '#c7c6cb',
+        marginHorizontal: 15
     },
     image: {
         width: 100,
@@ -51,20 +53,21 @@ const styles = StyleSheet.create({
         paddingRight: 10,
         paddingTop: 3,
         paddingBottom: 3,
-        textAlign:'center'
+        textAlign: 'center'
     },
     itemname: {
         fontWeight: 'bold',
         fontSize: 18,
         paddingTop: 5,
-        paddingBottom:5
+        paddingBottom: 5
     },
     price: {
-      fontWeight:'bold'  
+        fontWeight: 'bold'
     },
     date: {
         color: '#c7c6cb',
-        paddingVertical:10
-    }
+        paddingVertical: 10
+    },
+   
 })
 export default LikesItem;
