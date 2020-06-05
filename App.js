@@ -212,4 +212,6 @@ const styles = StyleSheet.create({
 });
 
 
+//https://www.pinterest.com/pin/327566572898372926/
+
 export default App;
